@@ -2,6 +2,7 @@ package com.tts.bookmart.config;
 
 import com.tts.bookmart.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
@@ -17,6 +18,14 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
     private UserService userService;
     @Autowired
     private BCryptPasswordEncoder bCryptPasswordEncoder;
+
+
+//    @Value("${spring.queries.users-query}")
+//    private String usersQuery;
+//
+//    @Value("${spring.queries.roles-query}")
+//    private String rolesQuery;
+
 
     @Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
