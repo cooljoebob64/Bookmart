@@ -8,16 +8,20 @@
 <div th:replace="fragments/fragments :: navbar"></div>
 <main role="main">
     <div class="container">
-        <form class="form-signin" th:action="@{/signin}" method="post">
+        <form class="form-signin" th:action="@{/signin}" th:object="${user}" method="post">
             <h2 class="form-signin-heading" style="text-align: center">Please Sign In/Up</h2>
             <p>
                 <label for="username" class="sr-only">Username</label>
-                <input type="text" id="username" name="username" class="form-control" placeholder="Username">
+                <label th:if="${#fields.hasErrors('username')}" th:errors="*{username}"
+                       class="validation-message"></label>
+                <input type="text" id="username" name="username" class="form-control" placeholder="Username" th:field="*{username}">
             </p>
             <p>
                 <label for="password" class="sr-only">Password</label>
+                <label th:if="${#fields.hasErrors('password')}" th:errors="*{password}"
+                       class="validation-message"></label>
                 <input type="password" id="password" name="password" class="form-control"
-                       placeholder="Password">
+                       placeholder="Password" th:field="*{password}">
             </p>
             <div style="display: flex; justify-content: space-between">
                 <button class="btn btn-lg btn-primary" name="submit" value="in" type="submit"
