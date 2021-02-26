@@ -9,6 +9,16 @@
 
 <h2>This is your shopping cart! (In Progress)</h2>
 
+<ul>
+    <li th:each="product:${cart}">
+<!--        <p th:text="${product}"></p>--> <!-- The HashMap entry-->
+<!--        <p th:text="${product.key}"></p>--> <!-- The Product -->
+        <p th:text="${product.key.name}"></p>
+        <p th:text="${product.key.price}"></p>
+        <p th:text="${product.value}"></p> <!-- The Product Quantity -->
+    </li>
+</ul>
+
 <button id="checkout-button" href="/checkout">Checkout</button>
 
 
