@@ -1,9 +1,7 @@
 <!DOCTYPE HTML>
 <html xmlns:th="http://www.thymeleaf.org" lang="en">
-<head>
-    <title>Shopping Cart</title>
-    <div th:replace="fragments/fragments :: head"></div>
-</head>
+<head th:replace="fragments/fragments :: head(title='Shopping Cart')"></head>
+
 <body>
 <div th:replace="fragments/fragments :: navbar"></div>
 

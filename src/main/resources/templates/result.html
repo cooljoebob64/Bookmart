@@ -1,9 +1,6 @@
 <!DOCTYPE html>
 <html xmlns='http://www.w3.org/1999/xhtml' xmlns:th='http://www.thymeleaf.org'>
-<head>
-    <title>Result</title>
-    <div th:replace="fragments/fragments :: head"></div>
-</head>
+<head th:replace="fragments/fragments :: head(title='Result')"></head>
 <body>
 <h3 th:if='${error}' th:text='${error}' style='color: red;'></h3>
 <div th:unless='${error}'>
